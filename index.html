@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دورة التسويق الإلكتروني الشاملة</title>
+    <!-- Chosen Palette: Calm Tech Harmony -->
+    <!-- Application Structure Plan: تم تصميم الصفحة كهيكل سردي متدفق لجذب المستخدم. تبدأ بمقدمة قوية ونداء للعمل (CTA)، ثم قسم يحدد الجمهور المستهدف لمساعدة الزائر على تحديد مدى ملاءمة الدورة له. يتبع ذلك قسم تفاعلي للمناهج الدراسية باستخدام نظام الأكورديون لتجنب إرهاق المستخدم بقائمة طويلة وتشجيع التفاعل. بعد ذلك، قسم بصري جذاب يعرض إحصائيات الدورة بأرقام متحركة لترك انطباع قوي. ثم قسم تفاعلي للأسعار مع آلة حاسبة ورسم بياني لتوضيح خطط الدفع. وأخيرًا، قسم يعزز الثقة (لماذا نحن؟) ونداء واضح للتسجيل. هذا الهيكل يوجه المستخدم بشكل منطقي من الاهتمام إلى اتخاذ القرار. -->
+    <!-- Visualization & Content Choices: 1. المنهج الدراسي: الهدف (تنظيم، إعلام)، الطريقة (أكورديون تفاعلي HTML/CSS/JS)، التبرير (يقلل الفوضى ويزيد التفاعل مقارنة بقائمة ثابتة). 2. إحصائيات الدورة: الهدف (إعلام، إقناع)، الطريقة (عدادات أرقام متحركة HTML/JS)، التبرير (تجذب الانتباه للأرقام الرئيسية بشكل أفضل من النص العادي). 3. خطط الدفع: الهدف (مقارنة، توضيح)، الطريقة (أزرار اختيار مع تحديث رسم بياني دائري من Chart.js)، التبرير (يجعل فهم الأسعار أسهل وأكثر تفاعلية). 4. باقي الأقسام: الهدف (إعلام، بناء الثقة)، الطريقة (تنسيقات HTML/Tailwind منظمة مع أيقونات بسيطة)، التبرير (بساطة ووضوح لإيصال الرسالة). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .rtl-icon {
+            transform: scaleX(-1);
+        }
+        .gradient-bg {
+            background-color: #f7fafc;
+        }
+        .main-accent-bg { background-color: #2c7a7b; }
+        .main-accent-text { color: #2c7a7b; }
+        .secondary-accent-bg { background-color: #e2e8f0; }
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold main-accent-text">الانطلاقة الرقمية</h1>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#features" class="text-gray-600 hover:main-accent-text">المميزات</a>
+                <a href="#curriculum" class="text-gray-600 hover:main-accent-text">المحاور</a>
+                <a href="#pricing" class="text-gray-600 hover:main-accent-text">الأسعار</a>
+                <a href="#contact" class="text-gray-600 hover:main-accent-text">للتسجيل</a>
+            </div>
+            <a href="#contact" class="main-accent-bg text-white py-2 px-4 rounded-lg hover:bg-teal-700 transition duration-300">
+                إحجز الآن
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="gradient-bg pt-20 pb-16 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    حوّل شغفك بالتسويق إلى مهنة مربحة
+                </h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">
+                    دورتنا التدريبية الشاملة في التسويق الإلكتروني مصممة لتأخذك من الصفر إلى الاحتراف. تعلم أحدث الاستراتيجيات والأدوات التي يستخدمها الخبراء لتحقيق نتائج حقيقية.
+                </p>
+                <a href="#curriculum" class="bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition duration-300 text-lg shadow-lg">
+                    اكتشف محاور الدورة
+                </a>
+            </div>
+        </section>
+
+        <!-- Who is this for Section -->
+        <section id="features" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold main-accent-text mb-2">لمن هذه الدورة؟</h3>
+                    <p class="text-gray-600">مصممة خصيصاً لتلبية طموحاتك، سواء كنت مبتدئاً أو محترفاً.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 border rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">👨‍💻</div>
+                        <h4 class="text-xl font-bold mb-2">الفريلانسرز الطموحين</h4>
+                        <p>لزيادة دخلك وتقديم خدمات تسويقية متكاملة لعملائك بثقة واحترافية.</p>
+                    </div>
+                    <div class="p-8 border rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h4 class="text-xl font-bold mb-2">أصحاب المشاريع والشركات</h4>
+                        <p>لتنمية أعمالك بنفسك، وفهم آليات السوق الرقمي، وتحقيق نمو مستدام.</p>
+                    </div>
+                    <div class="p-8 border rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h4 class="text-xl font-bold mb-2">كل من يرغب بتعلم مهارة المستقبل</h4>
+                        <p>للانطلاق في مسار مهني جديد ومطلوب بشدة في سوق العمل الحالي.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Journey in Numbers Section -->
+        <section class="py-16 gradient-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold main-accent-text mb-2">رحلتك التعليمية بالأرقام</h3>
+                    <p class="text-gray-600">نقدم لك تجربة تعليمية مكثفة وعملية لضمان أفضل النتائج.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <p class="text-4xl font-extrabold main-accent-text" data-target="90">0</p>
+                        <p class="text-gray-600 mt-2">ساعة تدريب عملي</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <p class="text-4xl font-extrabold main-accent-text" data-target="30">0</p>
+                        <p class="text-gray-600 mt-2">محاضرة متخصصة</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <p class="text-4xl font-extrabold main-accent-text" data-target="10">0</p>
+                        <p class="text-gray-600 mt-2">محاور أساسية</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg">
+                        <p class="text-4xl font-extrabold main-accent-text" data-target="2">0</p>
+                        <p class="text-gray-600 mt-2">أشهر من التعلم المكثف</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold main-accent-text mb-2">ماذا ستتعلم في الدورة؟</h3>
+                    <p class="text-gray-600">منهج شامل يأخذك خطوة بخطوة نحو الاحتراف.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-4" id="accordion-container">
+                        <!-- Accordion items will be generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 gradient-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold main-accent-text mb-2">استثمارك في مستقبلك</h3>
+                    <p class="text-gray-600">اختر خطة الدفع التي تناسبك بكل سهولة.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h4 class="text-2xl font-bold text-center mb-6">سعر الدورة الكامل: 2000 جنيه</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="radio" id="weekly" name="payment_plan" value="250" class="hidden peer" checked>
+                                    <label for="weekly" class="block p-4 border rounded-lg cursor-pointer peer-checked:bg-teal-50 peer-checked:border-teal-500">
+                                        <span class="font-bold">النظام الأسبوعي:</span> 250 جنيه / أسبوع
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="biweekly" name="payment_plan" value="500" class="hidden peer">
+                                    <label for="biweekly" class="block p-4 border rounded-lg cursor-pointer peer-checked:bg-teal-50 peer-checked:border-teal-500">
+                                        <span class="font-bold">نظام نصف شهري:</span> 500 جنيه / 15 يوم
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="monthly" name="payment_plan" value="1000" class="hidden peer">
+                                    <label for="monthly" class="block p-4 border rounded-lg cursor-pointer peer-checked:bg-teal-50 peer-checked:border-teal-500">
+                                        <span class="font-bold">النظام الشهري:</span> 1000 جنيه / شهر
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container h-64 md:h-80 mx-auto w-full max-w-sm">
+                        <canvas id="pricingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold mb-4">هل أنت جاهز للإنطلاق؟</h3>
+                <p class="max-w-2xl mx-auto text-gray-300 mb-8">
+                    الأماكن محدودة لضمان جودة التدريب. احجز مقعدك الآن وابدأ رحلتك نحو مستقبل مهني باهر في عالم التسويق الرقمي.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+                    <a href="tel:01159751975" class="text-2xl font-bold hover:text-yellow-400 transition">📞 01159751975</a>
+                    <a href="tel:01002399815" class="text-2xl font-bold hover:text-yellow-400 transition">📞 01002399815</a>
+                </div>
+                <a href="https://wa.me/201159751975" target="_blank" class="bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-yellow-500 transition duration-300 text-xl shadow-lg inline-block">
+                    تواصل معنا عبر واتساب
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 الانطلاقة الرقمية. كل الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animated Counters
+            const counters = document.querySelectorAll('[data-target]');
+            const speed = 200; 
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // Accordion for Curriculum
+            const curriculumData = [
+                { title: 'أساسيات التسويق الإلكتروني', content: 'مقدمة شاملة لعالم التسويق الرقمي، مصطلحاته الأساسية، وكيفية بناء وجود قوي على الإنترنت.' },
+                { title: 'أهم قنوات التسويق الإلكتروني', content: 'استعراض وتحليل لأهم المنصات التسويقية (سوشيال ميديا، بريد إلكتروني، محركات بحث) لاختيار الأنسب لعملك.' },
+                { title: 'التسويق عبر السوشيال ميديا (SMM)', content: 'تعلم كيفية إدارة الحملات، إنشاء محتوى جذاب، وبناء مجتمع متفاعل على منصات مثل فيسبوك، انستجرام، ولينكدإن.' },
+                { title: 'تحسين محركات البحث (SEO)', content: 'أسرار الظهور في مقدمة نتائج بحث جوجل، من خلال تحسين موقعك داخلياً وخارجياً.' },
+                { title: 'الفرق بين كتابة المحتوى وكتابة الإعلانات', content: 'إتقان فن كتابة المحتوى الذي يبني الثقة، والإعلانات التي تدفع المستخدم لاتخاذ قرار الشراء.' },
+                { title: 'إعلانات فيسبوك وإنستجرام (Meta Ads)', content: 'التطبيق العملي لإنشاء وإدارة حملات إعلانية ناجحة على منصات ميتا، من الاستهداف الدقيق إلى تحليل النتائج.' },
+                { title: 'إعلانات تيك توك (TikTok Ads)', content: 'استغلال قوة منصة تيك توك للوصول إلى جمهور واسع من خلال حملات إعلانية مبتكرة.' },
+                { title: 'إعلانات جوجل (Google Ads)', content: 'تعلم كيفية إنشاء حملات إعلانية على شبكة بحث جوجل والشبكة الإعلانية للوصول للعملاء في لحظة بحثهم عنك.' },
+                { title: 'استراتيجيات وخطط التسويق', content: 'كيفية بناء استراتيجية تسويقية متكاملة، تحديد الأهداف، الميزانية، ومؤشرات الأداء الرئيسية (KPIs).' },
+                { title: 'التسويق الإلكتروني المتقدم', content: 'استكشاف مفاهيم متقدمة مثل أتمتة التسويق، اختراق النمو (Growth Hacking)، والتحليلات المتقدمة لتحقيق أفضل عائد على الاستثمار.' }
+            ];
+
+            const accordionContainer = document.getElementById('accordion-container');
+            curriculumData.forEach((item, index) => {
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'border rounded-lg';
+                accordionItem.innerHTML = `
+                    <button class="w-full flex justify-between items-center text-right p-4 font-bold bg-gray-100 hover:bg-gray-200 transition">
+                        <span>${item.title}</span>
+                        <span class="text-xl transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="tab-content">
+                        <p class="p-4 bg-white text-gray-600">${item.content}</p>
+                    </div>
+                `;
+                accordionContainer.appendChild(accordionItem);
+            });
+
+            const accordionButtons = accordionContainer.querySelectorAll('button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('span:last-child');
+                    
+                    // Close other tabs
+                    accordionButtons.forEach(otherButton => {
+                        if(otherButton !== button) {
+                            otherButton.nextElementSibling.style.maxHeight = null;
+                            otherButton.querySelector('span:last-child').classList.remove('rotate-45');
+                        }
+                    });
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('rotate-45');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.add('rotate-45');
+                    }
+                });
+            });
+
+            // Pricing Chart
+            const ctx = document.getElementById('pricingChart').getContext('2d');
+            let pricingChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['الدفعة الحالية', 'المتبقي من قيمة الدورة'],
+                    datasets: [{
+                        data: [250, 1750],
+                        backgroundColor: ['#f6e05e', '#2c7a7b'],
+                        borderColor: ['#f6e05e', '#2c7a7b'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Cairo', sans-serif",
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            bodyFont: {
+                                family: "'Cairo', sans-serif"
+                            },
+                            titleFont: {
+                                family: "'Cairo', sans-serif"
+                            }
+                        }
+                    }
+                }
+            });
+
+            const paymentPlans = document.querySelectorAll('input[name="payment_plan"]');
+            paymentPlans.forEach(plan => {
+                plan.addEventListener('change', function() {
+                    const paymentValue = +this.value;
+                    const remaining = 2000 - paymentValue;
+                    pricingChart.data.datasets[0].data = [paymentValue, remaining];
+                    pricingChart.update();
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
